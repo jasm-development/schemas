@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "https://raw.githubusercontent.com/jasm-development/schemas/schema/jasm-config.schema.json",
+    "description": "JAsm configuration file for projects",
+    "type": "object",
+    "properties": {
+        "isa": {
+            "type": "string",
+            "minLength": 1
+        },
+        "author": {
+            "type": "string",
+            "minLength": 1
+        },
+        "version": {
+            "type": "string",
+            "minLength": 1
+        },
+        "exclude": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "properties": {}
+            }
+        },
+        "preamble": {
+            "type": "string",
+            "minLength": 1
+        },
+        "entry": {
+            "type": "string",
+            "description": "Main entry point for the project. All files included here will be assembled as well.",
+            "minLength": 1
+        },
+       "each": {
+            "type": "boolean",
+            "description": "Treat every file as a single project. Defaults to false.",
+            "default": false
+       },
+        "cmd": {
+            "type": "object",
+            "properties": {
+                "debug": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "release": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "test": {
+                    "type": "string",
+                    "minLenght": 1
+                }
+            },
+            "required": [
+                "release"
+            ]
+        }
+    },
+    "required": [
+        "isa",
+        "author",
+        "version",
+        "entry"
+    ]
+}
