@@ -40,7 +40,7 @@
         "location": {
             "type": "string",
             "description": "Location to install the built files. Use `<std>` to add it to the standart library.",
-            "default": "./dependencies",
+            "default": "./dependencies"
         },
         "cmd": {
             "type": "object",
