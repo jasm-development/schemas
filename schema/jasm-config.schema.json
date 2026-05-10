@@ -8,9 +8,14 @@
             "type": "string",
             "minLength": 1
         },
-        "author": {
-            "type": "string",
-            "minLength": 1
+        "authors": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "properties": {}
+            },
+            "minItems": 1,
+            "uniqueItems": true
         },
         "version": {
             "type": "string",
