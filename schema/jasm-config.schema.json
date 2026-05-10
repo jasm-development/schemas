@@ -21,7 +21,8 @@
             "items": {
                 "type": "string",
                 "properties": {}
-            }
+            },
+            "uniqueItems": true
         },
         "preamble": {
             "type": "string",
