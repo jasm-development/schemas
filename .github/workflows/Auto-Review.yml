@@ -1,0 +1,16 @@
+name: Auto Review
+on:
+  pull_request:
+    types: [opened]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Auto-request review
+        uses: Garlic-Team/Auto-Review@1.0.5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          reviewers: JoBeGaming
+          #teams: <team>
