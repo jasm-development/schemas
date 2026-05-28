@@ -29,7 +29,12 @@
                                     "type": "string",
                                     "minLenght": 0
                                 }
-                            }
+                            },
+                            "required": [
+                                "name",
+                                "errc",
+                                "message"
+                            ]
                         }
                     },
                     "warnings": {
@@ -48,10 +53,19 @@
                                     "type": "string",
                                     "minLenght": 0
                                 }
-                            }
+                            },
+                            "required": [
+                                "name",
+                                "warnc",
+                                "message"
+                            ]
                         }
                     }
-                }
+                },
+                "required": [
+                    "lang",
+                    "invalid"
+                ]
             },
             "minItems": 1,
             "uniqueItems": true
