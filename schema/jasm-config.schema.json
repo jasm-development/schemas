@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "$id": "https://raw.githubusercontent.com/jasm-development/schemas/schema/jasm-config.schema.json",
+    "$id": "https://raw.githubusercontent.com/jasm-development/schemas/main/schema/jasm-config.schema.json",
     "description": "JAsm configuration file for projects",
     "type": "object",
     "properties": {
