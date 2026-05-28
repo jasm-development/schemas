@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "$id": "https://raw.githubusercontent.com/jasm-development/schemas/schema/languages.schema.json",
+    "$id": "https://raw.githubusercontent.com/jasm-development/schemas/main/schema/languages.schema.json",
     "description": "JAsm Language Server Error / Warning messages",
     "type": "object",
     "properties": {
