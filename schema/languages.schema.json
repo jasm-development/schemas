@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "https://raw.githubusercontent.com/jasm-development/schemas/schema/languages.schema.json",
+    "description": "JAsm Language Server Error / Warning messages",
+    "type": "object",
+    "properties": {
+        "languages": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "lang": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "invalid": {
+                        "type": "array",
+                        "properties": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                },
+                                "errc": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "minLenght": 0,
+                                }
+                            }
+                        }
+                    },
+                    "warnings": {
+                        "type": "array",
+                        "properties": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                },
+                                "warnc": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "minLenght": 0,
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "languages"
+    ]
+}
