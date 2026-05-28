@@ -20,14 +20,14 @@
                             "properties": {
                                 "name": {
                                     "type": "string",
-                                    "minLength": 1,
+                                    "minLength": 1
                                 },
                                 "errc": {
                                     "type": "integer"
                                 },
                                 "message": {
                                     "type": "string",
-                                    "minLenght": 0,
+                                    "minLenght": 0
                                 }
                             }
                         }
@@ -39,14 +39,14 @@
                             "properties": {
                                 "name": {
                                     "type": "string",
-                                    "minLength": 1,
+                                    "minLength": 1
                                 },
                                 "warnc": {
                                     "type": "integer"
                                 },
                                 "message": {
                                     "type": "string",
-                                    "minLenght": 0,
+                                    "minLenght": 0
                                 }
                             }
                         }
