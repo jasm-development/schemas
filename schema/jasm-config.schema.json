@@ -22,7 +22,7 @@
         "version": {
             "type": "string",
             "minLength": 1,
-            "description": "Version of the JASM Tooling, including the Assembler and Emulator. For versions, see https://www.github.com/jasm-development/jasm/releases."
+            "description": "Version of the JASM Tooling, including the Assembler and Emulator. For all versions, see https://www.github.com/jasm-development/jasm/releases."
         },
         "exclude": {
             "type": "array",
