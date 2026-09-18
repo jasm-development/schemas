@@ -42,10 +42,10 @@
             "description": "Treat every file as a single project. Defaults to false.",
             "default": false
         },
-        "location": {
+        "include-location": {
             "type": "string",
-            "description": "Location to install the built files. Use `<std>` to add it to the standart library. Defaults to `./dependencies`.",
-            "default": "./dependencies"
+            "description": "Location to install the built files. Use `<std>` to add it to the standart library. Defaults to `./include`.",
+            "default": "./include"
         },
         "root": {
             "type": "string",
