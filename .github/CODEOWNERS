@@ -1,0 +1,10 @@
+# All files
+*                               @jasm-development/backend-maintainers
+
+.github/                        @jasm-development/chore
+
+# Documentation
+docs/*                          @jasm-development/documentation-maintainers
+
+# Schema files
+*.json                          @jasm-development/schema-maintainers
