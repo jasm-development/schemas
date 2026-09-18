@@ -48,7 +48,7 @@
             "default": false,
             "description": "Treat every file as a single project. Defaults to false. If files are seen seperately by tooling, fields like exclude, entry and root wll not apply."
         },
-        "location": {
+        "include-location": {
             "type": "string",
             "default": "./include",
             "description": "Location to install the built dependency files, seen from the project root. Use `<std>` to add it to the standart library. Defaults to `./include`. See https://jasm-development.github.io/docs/jman for more."
