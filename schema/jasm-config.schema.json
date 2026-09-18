@@ -1,81 +1,93 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "$id": "https://raw.githubusercontent.com/jasm-development/schemas/main/schema/jasm-config.schema.json",
-    "description": "JAsm configuration file for projects",
     "type": "object",
     "properties": {
         "isa": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Version of the JAsm Instruction-Set-Architecture used. Use `<newest>` to automatically select the newest version found, or install an even newer version, if wanted. For more information, see https://jasm-development.github.io/docs/jasm-config/fields#isa."
         },
         "authors": {
             "type": "array",
             "items": {
                 "type": "string",
-                "minLength": 1
+                "minLength": 1,
+                "description": "Name of the author."
             },
             "minItems": 1,
-            "uniqueItems": true
+            "uniqueItems": true,
+            "description": "Names of all major authors working on this project."
         },
         "version": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Version of the JASM Tooling, including the Assembler and Emulator. For versions, see https://www.github.com/jasm-development/jasm/releases."
         },
         "exclude": {
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "string",
+                "description": "Glob for the path to be excluded when using the `--validate-all` or `--assemble-all` flag."
             },
-            "uniqueItems": true
+            "uniqueItems": true,
+            "description": "Globs of the paths to be excluded when using the `--validate-all` or `--assemble-all` flag. For more about these flags, see https://jasm-development.github.io/docs/flags#validate-all and https://jasm-development.github.io/docs/flags#assemble-all."
         },
         "preamble": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Path to the file acting as the preamble for the project. See https://jasm-development.github.io/docs/preamble."
         },
         "entry": {
             "type": "string",
-            "description": "Main entry point for the project. All files included here will be assembled as well.",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Main entry point for the project. All files included in this file will be assembled as well, unless the `--assemble-all` is used, in which case all files not excluded will be assembled. See https://jasm-development.github.io/docs/entrypoint for more information."
         },
         "each": {
             "type": "boolean",
-            "description": "Treat every file as a single project. Defaults to false.",
-            "default": false
+            "default": false,
+            "description": "Treat every file as a single project. Defaults to false. If files are seen seperately by tooling, fields like exclude, entry and root wll not apply."
         },
         "include-location": {
             "type": "string",
-            "description": "Location to install the built files. Use `<std>` to add it to the standart library. Defaults to `./include`.",
-            "default": "./include"
+            "default": "./include",
+            "description": "Location to install the built dependency files, seen from the project root. Use `<std>` to add it to the standart library. Defaults to `./include`. See https://jasm-development.github.io/docs/jman for more."
         },
         "root": {
             "type": "string",
-            "description": "Location of the root of this project, seen from the total project root.",
-            "default": "./"
+            "default": "../",
+            "description": "Location of the root of this project, seen from the total project root. Defaults to the root of the folder which contains this file."
         },
         "cmd": {
             "type": "object",
             "properties": {
                 "debug": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Command line to be used for debug purposes. Should start with `jasm`, e.g. `jasm assemble main.jasm --no-stdlib --o=0 --annotated --debug`."
                 },
                 "release": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Command line to be used for releases. Should start with `jasm`, e.g. `jasm assemble main.jasm --no-stdlib --o=3 --compressed-out`."
                 },
                 "test": {
                     "type": "string",
-                    "minLenght": 1
+                    "minLenght": 1,
+                    "description": "Command line to be used for testing assembled files in the `./tests` directory. Should start with `jasm`, e.g. `jasm assemble ./tests/* --project --out-directory=./tests/out/; jasm emulate ./tests/out/* --dump-fail`."
                 }
             },
+            "minItems": 1,
             "required": [
                 "release"
-            ]
+            ],
+            "description": "Commands to be used in various situations, e.g. 'debug', 'release' and 'test'. If none of these is set, commands like `jasm debug`, `jasm release` and `jasm test` won't work unless additional arguments are provided."
         }
     },
     "required": [
         "isa",
         "authors",
         "version"
-    ]
+    ],
+    "description": "JAsm configuration file for projects"
 }
