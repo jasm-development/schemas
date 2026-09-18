@@ -1,0 +1,12 @@
+# Chore-related files
+.github/*                       @jasm-development/chore-workers
+
+# Documentation
+docs/*                          @jasm-development/documentation-maintainers
+README.md                       @jasm-development/documentation-maintainers
+
+# Schema files
+*.json                          @jasm-development/schema-maintainers
+
+# All files
+*                               @jasm-development/backend-maintainers
